@@ -1,3 +1,4 @@
+#Importing Modules
 import cv2
 import numpy as np
 from joining_images import stackImages
@@ -34,7 +35,7 @@ def getContoours(img, imgContour):
             cv2.putText(imgContour,f"{objCor}{objectType}",
                         (x + int(w / 2) - 10, y + int(h / 2) - 10), cv2.FONT_HERSHEY_SIMPLEX,
                         0.7, (0, 0, 0), 2)
-
+#main
 path = "resources/shapes_small.jpg"
 img = cv2.imread(path)
 imgContour = img.copy()
@@ -44,6 +45,7 @@ imgGray = cv2.cvtColor(imgBlur, cv2.COLOR_BGR2GRAY)
 imgthresh = cv2.adaptiveThreshold(imgGray,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                   cv2.THRESH_BINARY,11,2)
 
+#Result
 #cv2.resize(imgthresh,(img.shape[1],img.shape[0]))
 imgCanny = cv2.Canny(imgBlur, 50, 50)
 getContoours(imgCanny,imgContour)
