@@ -1,11 +1,15 @@
+#importing Modules
 import cv2
 import numpy as np
+
+#Video Capture
 frameWidth = 640
 frameHeight = 480
 cap = cv2.VideoCapture(0)
 cap.set(3,frameWidth)
 cap.set(4,frameHeight)
 cap.set(10,130) # Brightness
+
 myColors = [[0,106,100,118,255,255], # blue
              [5,107,0,19,255,255], # orange
              [133,56,0,159,156,255], # purple
@@ -45,6 +49,8 @@ def getContoours(img, imgContour):
 def DrawOnCanvas(myPoints,myColorValues):
     for point in myPoints:
         cv2.circle(imgResult,(point[0],point[1]),10,myColorValues[point[2]],cv2.FILLED)
+        
+#Main
 while True:
     success,img = cap.read()
     imgResult = img.copy()
