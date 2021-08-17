@@ -1,9 +1,11 @@
+#Importing Modules
 import cv2
 import numpy as np
 ###################################################################
 widthImg = 640
 heightImg =480
 #####################################################################
+#Video Capture
 # cap = cv2.VideoCapture(0)
 # cap.set(3, widthImg)
 # cap.set(4, heightImg)
